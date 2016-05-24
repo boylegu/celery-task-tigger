@@ -1,6 +1,5 @@
 # celery-task-tigger
-
-==
+====
 A controllable timing task widgets with Celery
 
 ## About
