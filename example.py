@@ -1,3 +1,5 @@
+from __future__ import unicode_literals
+
 from celery import Celery
 
 from celery_tasktigger.decorator import tigger_task
@@ -13,6 +15,6 @@ app.conf.update(
 
 
 @app.task(bind=True)
-@tigger_task(countdown=3)
-def add(x, y):
+@tigger_task(max_times='sda')
+def add(self, x, y):
     return x + y
