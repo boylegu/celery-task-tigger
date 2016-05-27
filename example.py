@@ -15,6 +15,6 @@ app.conf.update(
 
 
 @app.task(bind=True)
-@tigger_task(max_times='sda')
+@tigger_task(max_times='forever')
 def add(self, x, y):
     return x + y
