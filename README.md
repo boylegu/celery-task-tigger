@@ -1,6 +1,11 @@
 celery-task-tigger
 ====
 
+[![release](https://img.shields.io/badge/release-0.3-blue.svg)]()
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)]()
+[![celery](https://img.shields.io/badge/celery-3.1.18%2B-brightgreen.svg)]()
+
+
 A controllable timing task widgets with Celery
 
 ## About
@@ -57,21 +62,55 @@ def add(self, x, y):
 
 Option `countdown`: You can also provide the countdown argument to execute.
 
+Type:  ***int***
+
+Default: 1 (seconds)
+
 Example: 
 
 ~~~python
 @app.task(bind=True)
-@tigger_task(max_times='forever', countdown=3)    # execute in 3 seconds
+@tigger_task(max_times='forever', countdown=3)    # each execute in 3 seconds
 def add(self, x, y):
     return x + y
 
 ~~~
 
-## How To Run
+## How To Calling Task
 
+~~~~python
+>> from example import add
+>> add.apply_async((1,2))
+~~~~
 
+you can also delayed execute task, as follow：
 
-## More Example
+~~~~python
+>> from example import add
+>> add.apply_async((1,2), countdown=4)   # after 4 seconds, begin start task
+~~~~
+
+> About Celery Task, Please see below for details： 
+> [Celery Calling-Tasks Document](http://docs.jinkan.org/docs/celery/userguide/calling.html)
+
+## How To Stop
+
+if you appoint `max_times='forever'` or provides the bigger values of max_times, you must stop it in programe.
+
+~~~~python
+>> result = add.apply_async((1,2))
+>> result.revoke()
+   or
+>> from mycelery import app
+>> app.control.revoke('task_id')
+~~~~
+
+> See below for details： 
+> [Celery Document——FAQ](http://docs.jinkan.org/docs/celery/faq.html#can-i-cancel-the-execution-of-a-task)
+
+## Some screenshots
+
+![](http://cerou.img48.wal8.com/img48/539156_20160309131519/146468515295.gif)
 
 ## Features
 
