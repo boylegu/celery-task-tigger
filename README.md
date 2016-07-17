@@ -110,7 +110,7 @@ if you appoint `max_times='forever'` or provides the bigger values of max_times,
 
 ## Some screenshots
 
-![](http://cerou.img48.wal8.com/img48/539156_20160309131519/146468515295.gif)
+![](http://d3.freep.cn/3tb_1607171436167sgo569376.gif)
 
 ## Features
 
