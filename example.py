@@ -6,11 +6,10 @@ from celery_tasktigger.decorator import tigger_task
 
 app = Celery('example', backend='amqp', broker='amqp://127.0.0.1:5672//')
 
+#  upgrade celery 4.0
 app.conf.update(
-    CELERY_ACCEPT_CONTENT=['json'],
-    CELERY_TASK_SERIALIZER='json',
-    CELERY_RESULT_SERIALIZER='json',
-    CELERY_RESULT_BACKEND='amqp',
+    result_backend='amqp',
+    result_expires=18000,  # 5 hours.
 )
 
 
