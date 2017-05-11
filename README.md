@@ -3,7 +3,7 @@ celery-task-tigger
 
 [![release](https://img.shields.io/badge/release-0.3-blue.svg)]()
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)]()
-[![celery](https://img.shields.io/badge/celery-3.1.18%2B-brightgreen.svg)]()
+[![celery](https://img.shields.io/badge/celery-3%7C4-brightgreen.svg)]()
 
 
 A controllable timing task widgets with Celery
