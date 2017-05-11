@@ -13,6 +13,7 @@ app.conf.update(
 )
 
 
+# celery -A example worker -l info
 @app.task(bind=True)
 @tigger_task(max_times='forever', countdown=3)
 def add(self, x, y):

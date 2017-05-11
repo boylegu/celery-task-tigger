@@ -22,6 +22,9 @@ def tigger_task(**tigger_kwargs):
         def wrapper(self, *args, **kwargs):
             check_args = None
             try:
+                countdown = kwargs.get('countdown')
+                if countdown:
+                    tigger_kwargs.update({'countdown': countdown})
                 check_args = check_argument(**tigger_kwargs)
                 func(self, *args, **kwargs)
                 raise LoopCaptureTag()
