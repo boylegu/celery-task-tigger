@@ -76,6 +76,16 @@ def add(self, x, y):
 
 ~~~
 
+OR
+
+~~~python
+@app.task(bind=True)
+@tigger_task(max_times='forever')    
+def add(self, x, y, countdown=3):  # you also can define formal parameter in task
+    return x + y
+
+~~~
+
 ## How To Calling Task
 
 ~~~~python
@@ -88,6 +98,7 @@ you can also delayed execute task, as follow：
 ~~~~python
 >> from example import add
 >> add.apply_async((1,2), countdown=4)   # after 4 seconds, begin start task
+# add.apply_async((1,2),{'countdown': 2} countdown=4)  ## after 4 seconds, begin start task and interval in 2 seconds
 ~~~~
 
 > About Celery Task, Please see below for details： 
@@ -114,7 +125,7 @@ if you appoint `max_times='forever'` or provides the bigger values of max_times,
 
 ## Features
 
-- 100％ full compatible with Celery
+- 100％ full compatible with Celery 3 | 4
 
 - the frequency of execution for task
 
