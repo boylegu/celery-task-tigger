@@ -1,7 +1,7 @@
 celery-task-tigger
 ====
 
-[![release](https://img.shields.io/badge/release-0.3-blue.svg)]()
+[![release](https://img.shields.io/badge/release-0.4-blue.svg)]()
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)]()
 [![celery](https://img.shields.io/badge/celery-3%7C4-brightgreen.svg)]()
 
