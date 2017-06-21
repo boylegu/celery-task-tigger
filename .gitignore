@@ -92,4 +92,5 @@ ENV/
 # ide
 .idea
 
-images
+images/*.gif
+images/*.lpop
