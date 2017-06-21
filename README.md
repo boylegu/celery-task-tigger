@@ -6,7 +6,12 @@ celery-task-tigger
 [![celery](https://img.shields.io/badge/celery-3%7C4-brightgreen.svg)]()
 
 
-A controllable timing task widgets with Celery
+
+
+<p align="center">
+  <a href ="##"><img alt="sanic_vue" src="https://github.com/boylegu/celery-task-tigger/blob/master/images/logo.jpg?raw=true"></a>
+
+<h3 align="center">A controllable timing task widgets with Celery</h3>
 
 ## About
 
